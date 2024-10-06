@@ -593,7 +593,7 @@
         padding: 20px;
         max-swidth: 350px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -35%);
     }
     .contacto .col .info ul{
         list-style: none;
