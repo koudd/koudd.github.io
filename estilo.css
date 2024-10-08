@@ -648,6 +648,10 @@
         line-height: 50px;
         font-size: 18px;
     }
+    footer .redes h5{          /* ultimo texto de los derechos de autor */
+        color: #00c3ff;
+        font-size: 13px;
+    }
     /* SECCION RESPONSIVE */
     @media screen and (max-width:980px){
         nav{
