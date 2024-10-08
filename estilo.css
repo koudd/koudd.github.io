@@ -120,6 +120,7 @@
         font-family: 'Righteous';
         text-align: center;
         padding: 20px 0;
+        color: #00c3ff;
 
     }
     .sobremi .contenido-seccion p{
@@ -223,6 +224,7 @@
         font-family: 'Righteous';
         text-align: center;
         padding: 20px 0;
+        color: #00c3ff;
 
     }
     .skills .fila{
@@ -373,6 +375,7 @@
         font-family: 'Righteous';
         text-align: center;
         padding: 20px 0;
+        color: #00c3ff;
 
     }
     .curriculum .fila{
@@ -479,6 +482,7 @@
         font-family: 'Righteous';
         text-align: center;
         padding: 20px 0;
+        color: #00c3ff;
     }
     .portfolio .galeria{
         display: flex;
