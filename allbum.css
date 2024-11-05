@@ -1,0 +1,68 @@
+
+body {
+    font-family: cursive;
+    background-image: url('/fondo1.jpg'); /* URL de la imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen de fondo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con transparencia */
+    backdrop-filter: blur(2px); /* Aplica el efecto borroso */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    color: rgb(238, 0, 167);
+    padding: 2px;
+    text-align: center;
+    width: 90%;
+    border-radius: 0 0 50px 50px;
+    font-size: 20px;
+}
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+.photo-card, .video-card {
+    background-color: rgba(0, 0, 0, 0.322);
+    backdrop-filter: blur(10px); /* Aplica el efecto borroso */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #ffffff00;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+
+}
+.photo-card{
+    filter: grayscale(100%);
+}
+.photo-card:hover{
+    filter: grayscale(0%);
+}
+
+.photo-card img, .video-card video {
+    width: 100%;
+    height: auto;
+}
+
+.photo-card p, .video-card p {
+    padding: 15px;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: #ff01aaf1;
+}
