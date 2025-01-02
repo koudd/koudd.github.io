@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo.png"/>
+
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Emmanuel</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">HABILIDADES</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="img/logo.png" alt=""> <!--foto del perfil-->
+            </div>
+            <h1>Emmanuel Pirela</h1>
+            <h2>Ingeniero Informatico - Programador Junior - Diseñador Grafico</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=100008030681893"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/engineer_code7"><i class="fa-brands fa-twitter"></i></a>
+               <!-- <a href="#"><i class="fa-brands fa-skype"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-solid fa-rss"></i></a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy Emmanuel Pirela.</span> Ingeniero Informatico - Diseñador Grafico - Programador Junior. <b>¿En Que Puedo Ayudarte?</b> ¡Estare Encandado!</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Cumpleaños</strong>
+                            30-04-2007
+                        </li>
+                        <li>
+                            <strong>WhatsApp</strong>
+                            +58 424-6497-143
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            emmanuelamesti07@gmail.com
+                        </li>
+                        <li>
+                            <strong>instagram</strong>
+                            @_emmanuel.dg
+                        </li>
+                        <li>
+                            <strong>Dirección</strong>
+                            San francisco 4004, Venezuela Zulia
+                        </li>
+                        <li>
+                            <strong>Cargo</strong>
+                            <span>FREELANCE</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>MAC OS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-pencil"></i>
+                            <span>DISEÑO</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-book"></i>
+                            <span>LIBROS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-car"></i>
+                            <span>AUTOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>FOTOS</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <button>
+                <span class="overlay"></span>
+                <a href="https://www.instagram.com/_emmanuel.dg/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>HABILIDADES</h2>
+            <div class="fila">
+                <!-- Technical Skill -->
+                <div class="col">
+                    <h3>Habilidades Tecnicas</h3>
+                    <div class="skill">
+                        <span>After Efect</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML & CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>89%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Illustrator</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Photoshop</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>81%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>programacion</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>55%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professional Skills -->
+                <div class="col">
+                    <h3>Habilidades Profesional</h3>
+                    <div class="skill">
+                        <span>Dedicacion</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Comunicacion</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Diseño Grafico</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+                <div class="col izquierda">
+                    <h3>Educación</h3>
+                    <div class="item izq">
+                        <h4>Estudio Universitario</h4>
+                        <span class="casa">Universidad Nacional Experimental "Rafael Maria Baralt"</span>
+                        <span class="fecha">2024 - En Proceso</span>
+                        <p>
+                            Estudiando actualmente en la Universidad Nacional Experimental "Rafael Maria Baralt" de Maracaibo, Zulia Venezuela, La carrera de "Ingenieria Informatica".
+                        </p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>Diseño Grafico</h4>
+                        <span class="casa">Estudios Autonomos</span>
+                        <span class="fecha">2020 - 2022</span>
+                        <p>
+                            Estudie de manera autonomamente todas las areas del "Diseño Grafico", Control total de programas como: Illustrator, Photoshop, Animate, Premiere Pro, Afert Efect, Ligtroom y todos los programas de adobe.
+                        </p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>Editor Multimedia</h4>
+                        <span class="casa">Estudios Autonomos</span>
+                        <span class="fecha">2020 - 2022</span>
+                        <p>
+                            Editor de videos & fotos profesional, Trabajemos juntos para que tu proyecto tenga alto impacto. ¿Que Dices Te Animas?
+                        </p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col derecha">
+                    <h3>¿Porque Soy Buena Opcion?</h3>
+                    <div class="item der">
+                        <h4>Ventajas</h4>
+                        <span class="casa">Revision Ilimitada</span>
+                        <span class="fecha">8 Meses De Revision</span>
+                        <p>
+                            Al finalizar tu proyecto tienes revision ilimitada "durante 8 Meses". ¿Suena Bien No?
+                        </p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>Unicos</h4>
+                        <span class="casa">100% Proyectos Unicos</span>
+                        <span class="fecha">Sin Copyright</span>
+                        <p>
+                            ¡Asi es! Trabajos Libres De Copyright... ¿Que es copyright? Son los derechos de privacidad de marcas registradas y unicas como por ejemplo: NIKE, MAC OS, ADIDAS, entre otras marcas registradas con los siguientes signos (© ®  © ™).
+                        </p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>Que Entrego Al Finalizar</h4>
+                        <span class="casa">Al Finazizar Entrego Los Siguientes Archivos</span>
+                        <span class="fecha">Tendras Control Total De Tu Marca</span>
+                        <p>MANUAL DEL USO ADECUADO - DOCUMENTO IMPRIMIBLE - LOGO PARA REDES - ARCHIVOS EN FORMATO "AI" POR SI EN ALGUN FUTURO DESEAS MEJORAR TU MARCA - LOGO ANIMADO.</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTFOLIO</h2>
+            <div class="galeria">
+                <div class="proyecto">
+                    <img src="img/p5.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p2.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p3.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p4.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/p1_queso.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="img/logo.png" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Creativo</h3>
+                        <p>Fotografía</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                                                <!--carrusel-->
+        <div class="conteudo">
+            <div class="carrosel">
+                <div class="caixa__card cc__1"><img src="img2/3.png" width="85px"></div>
+                <div class="caixa__card cc__2"><img src="img2/gato.JPG" width="85px"></div>
+                <div class="caixa__card cc__3"><img src="img2/photoMacro.JPG" width="85px"></div>
+                <div class="caixa__card cc__4"><img src="img2/1.png" width="85px"></div>
+                <div class="caixa__card cc__5"><img src="img2/2.png" width="85px"></div>
+                <div class="caixa__card cc__6"><img src="img2/4.png" width="85px"></div>
+                <div class="caixa__card cc__7"><img src="img2/5.png" width="85px"></div>
+                <div class="caixa__card cc__8"><img src="img2/7.png" width="85px"></div>
+
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                <!--    <input type="text" placeholder="Tú Nombre">
+                    <input type="text" placeholder="Número telefónico">
+                    <input type="text" placeholder="Dirección de correo">
+                    <input type="text" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button> -->
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="img/imgen_ubicacion.png" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Venezuela, Zulia , San francisco
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Llamanos: +58 424-6497-143 
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: emmanuelamesti07@gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.facebook.com/profile.php?id=100008030681893"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/engineer_code7"><i class="fa-brands fa-twitter"></i></a>
+          <!--  <a href="#"><i class="fa-brands fa-skype"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-solid fa-rss"></i></a> --> 
+            <h5>© 2024 <p>Enginner_code, Inc. Todos los derechos reservados.</p></h5>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+<head>                      <!--  C  A  R  R  U  U  S  E  L -->
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+
+        .carrosel {
+            -webkit-perspective: 250px;
+            -moz-perspective: 250px;
+            width: 400px;
+            height: 200px;
+            top: 50px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        @-webkit-keyframes efeitoCarrosel {
+            from {
+                -webkit-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                z-index: 10;
+                opacity: 1
+            }
+
+            50% {
+                z-index: -10;
+            }
+
+            to {
+                -webkit-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                z-index: 10;
+                opacity: 1
+            }
+        }
+
+        @-moz-keyframes efeitoCarrosel {
+            from {
+                -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                z-index: 10;
+                opacity: 1
+            }
+
+            50% {
+                z-index: -10;
+            }
+
+            to {
+                -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                z-index: 10;
+                opacity: 1
+            }
+        }
+
+        .caixa__card {
+            width: 90px;
+            height: 100px;
+            background-color: #442222;
+            position: absolute;
+            display: flex;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            top: 35px;
+            left: 125px;
+            font-size: 9px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+            text-align: center;
+            -webkit-animation-name: efeitoCarrosel;
+            -moz-animation-name: efeitoCarrosel;
+            -webkit-animation-duration: 8s;
+            -moz-animation-duration: 8s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+        }
+
+        .caixa__card:hover {
+            border: solid #00a2ff 3px;
+            box-shadow: 0px 0px 10px #00c9fc;
+        }
+
+        .caixa__card.cc__1 {
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -7s;
+            -moz-animation-delay: -7s;
+        }
+
+        .caixa__card.cc__2 {
+
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -6s;
+            -moz-animation-delay: -6s;
+        }
+
+        .caixa__card.cc__3 {
+
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -5s;
+            -moz-animation-delay: -5s;
+        }
+
+        .caixa__card.cc__4 {
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -4s;
+            -moz-animation-delay: -4s;
+        }
+
+        .caixa__card.cc__5 {
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -3s;
+            -moz-animation-delay: -3s;
+        }
+
+        .caixa__card.cc__6 {
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -2s;
+            -moz-animation-delay: -2s;
+        }
+
+        .caixa__card.cc__7 {
+            background: linear-gradient(-229deg, #000000, #000000);
+            -webkit-animation-delay: -1s;
+            -moz-animation-delay: -1s;
+        }
+
+        .caixa__card.cc__8 {
+            background: linear-gradient(-229deg, #000000, #000000);
+        }
+    </style>
+
+</head>                     <!--  C  A  R  R  U  U  S  E  L -->
+</html>
