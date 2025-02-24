@@ -57,7 +57,8 @@
     }
     /* SECCION I N I C I O */
     .inicio{
-        background:url(/5392027.jpg);
+       background: linear-gradient(to top, rgba(30, 35, 38, 0), rgba(10, 145, 223, 0)),
+        url(https://img.freepik.com/vector-gratis/fondo-hexagonal-degradado_23-2148953142.jpg?t=st=1740374724~exp=1740378324~hmac=de8daca69fd0a88973e3406f7680586f1e8b304fc63995c7b567ec78fa7a7bae&w=1060);
         background-size: cover;
         height: 100vh;
         color: #fff;
