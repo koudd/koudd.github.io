@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#0A0A0A" rx="28"/>
+  <!-- K letter -->
+  <g fill="none" stroke="#FF5500" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- K vertical bar -->
+    <line x1="52" y1="45" x2="52" y2="155"/>
+    <!-- K top diagonal -->
+    <line x1="52" y1="100" x2="115" y2="45"/>
+    <!-- K bottom diagonal -->
+    <line x1="52" y1="100" x2="120" y2="155"/>
+    <!-- Closing brace } -->
+    <!-- Top of brace -->
+    <path d="M135 55 C148 55 148 70 148 80 C148 90 138 97 138 100"/>
+    <!-- Bottom of brace -->
+    <path d="M135 145 C148 145 148 130 148 120 C148 110 138 103 138 100"/>
+  </g>
+</svg>

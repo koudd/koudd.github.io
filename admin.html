@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — koudd.lab</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,100..700,0..100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- Toast -->
+<div id="toast-container" aria-live="polite"></div>
+
+<!-- ════════════════════════════ LOGIN PAGE ════════════════════════════ -->
+<div id="login-page" class="admin-login-page" style="display:none">
+  <!-- BG orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <div class="admin-login-card reveal-scale" style="opacity:1;transform:none">
+    <div class="login-logo">
+      <img src="assets/logo-icon.svg" alt="koudd.lab logo" onerror="this.style.display='none'">
+      <h2>koudd<span style="color:var(--orange)">.lab</span></h2>
+      <p>Panel de Administración</p>
+    </div>
+
+    <div id="login-error" class="login-error" role="alert"></div>
+
+    <form id="login-form" novalidate aria-label="Formulario de inicio de sesión">
+      <div class="form-group">
+        <label class="form-label" for="login-user">Usuario</label>
+        <input
+          type="text"
+          id="login-user"
+          class="form-input"
+          placeholder="emmanuel"
+          value="emmanuel"
+          autocomplete="username"
+          required
+          aria-required="true">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="login-pass">Contraseña</label>
+        <input
+          type="password"
+          id="login-pass"
+          class="form-input"
+          placeholder="••••••••"
+          autocomplete="current-password"
+          required
+          aria-required="true">
+      </div>
+
+      <button type="submit" id="login-btn" class="btn btn-primary" style="width:100%;margin-top:.5rem" aria-label="Iniciar sesión">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+        </svg>
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <p style="text-align:center;margin-top:1.5rem;font-size:.8rem;color:var(--white-30)">
+      Solo administradores autorizados.
+    </p>
+
+    <a href="index.html" style="display:block;text-align:center;margin-top:.75rem;font-size:.82rem;color:var(--orange);font-family:var(--font-mono)">
+      ← Volver al portfolio
+    </a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════ DASHBOARD PAGE ════════════════════════════ -->
+<div id="dashboard-page" class="admin-layout" style="display:none">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="admin-sidebar" id="admin-sidebar" role="navigation" aria-label="Navegación del panel">
+    <div class="sidebar-logo">
+      <img src="assets/logo-icon.svg" alt="koudd.lab" style="height:32px" onerror="this.style.display='none'">
+      <span class="sidebar-logo-text">koudd<span>.lab</span></span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <span class="sidebar-label">Principal</span>
+
+      <div class="sidebar-link active" data-panel="dashboard" role="button" tabindex="0" aria-label="Dashboard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+        Dashboard
+      </div>
+
+      <span class="sidebar-label">Contenido</span>
+
+      <div class="sidebar-link" data-panel="projects" role="button" tabindex="0" aria-label="Proyectos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+        Proyectos
+      </div>
+
+      <div class="sidebar-link" data-panel="products" role="button" tabindex="0" aria-label="Tienda">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        Tienda / Productos
+      </div>
+
+      <div class="sidebar-link" data-panel="services" role="button" tabindex="0" aria-label="Servicios">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+        </svg>
+        Servicios
+      </div>
+
+      <span class="sidebar-label">Sistema</span>
+
+      <div class="sidebar-link" data-panel="settings" role="button" tabindex="0" aria-label="Configuración">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+        Configuración
+      </div>
+    </nav>
+
+    <!-- User info + logout -->
+    <div class="sidebar-bottom">
+      <div class="admin-user-info">
+        <div class="admin-avatar" aria-hidden="true">EP</div>
+        <div>
+          <div class="admin-name">Emmanuel Pirela</div>
+          <div class="admin-role">Administrador</div>
+        </div>
+      </div>
+      <button id="logout-btn" class="btn btn-outline btn-sm" style="width:100%" aria-label="Cerrar sesión">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+        </svg>
+        Cerrar Sesión
+      </button>
+      <a href="index.html" class="btn btn-ghost btn-sm" style="width:100%;margin-top:.5rem;text-align:center;display:flex;justify-content:center" aria-label="Ver portfolio">
+        ← Ver Portfolio
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── MAIN AREA ── -->
+  <main class="admin-main">
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <button id="sidebar-toggle" class="hamburger" style="display:none" aria-label="Toggle sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <h1 id="topbar-title" class="admin-topbar-title">Dashboard</h1>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <span class="badge badge-green">
+          <span style="width:6px;height:6px;border-radius:50%;background:#25D366;display:inline-block"></span>
+          Online
+        </span>
+        <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--white-60)" id="current-time"></span>
+      </div>
+    </header>
+
+    <div class="admin-content">
+
+      <!-- ────────────── PANEL: DASHBOARD ────────────── -->
+      <section id="panel-dashboard" class="admin-panel active" aria-label="Panel principal">
+        <div style="margin-bottom:2rem">
+          <h2 style="font-size:1.5rem;margin-bottom:.25rem">¡Bienvenido, Emmanuel! 👋</h2>
+          <p style="color:var(--white-60);font-size:.9rem">Gestiona tu portfolio desde aquí. All good.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="admin-stats">
+          <div class="admin-stat">
+            <div class="admin-stat-icon">🖥️</div>
+            <div>
+              <div class="admin-stat-num" id="a-stat-projects">—</div>
+              <div class="admin-stat-label">Proyectos</div>
+            </div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-icon">🛒</div>
+            <div>
+              <div class="admin-stat-num" id="a-stat-products">—</div>
+              <div class="admin-stat-label">Productos</div>
+            </div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-icon">🔧</div>
+            <div>
+              <div class="admin-stat-num" id="a-stat-services">—</div>
+              <div class="admin-stat-label">Servicios</div>
+            </div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-icon">📱</div>
+            <div>
+              <div class="admin-stat-num" style="font-size:1rem">+58 424</div>
+              <div class="admin-stat-label">WhatsApp activo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div style="margin-bottom:2rem">
+          <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--white-60);font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase">Acciones rápidas</h3>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-panel=projects]').click();document.getElementById('btn-add-project').click()" aria-label="Agregar proyecto">
+              + Nuevo Proyecto
+            </button>
+            <button class="btn btn-outline" onclick="document.querySelector('[data-panel=products]').click();document.getElementById('btn-add-product').click()" aria-label="Agregar producto">
+              + Nuevo Producto
+            </button>
+            <a href="index.html" target="_blank" class="btn btn-ghost" aria-label="Ver portfolio en nueva pestaña">
+              ↗ Ver Portfolio
+            </a>
+          </div>
+        </div>
+
+        <!-- Tips card -->
+        <div class="card" style="border-color:rgba(255,85,0,0.2)">
+          <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--orange)">💡 Guía rápida</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem">
+            <div style="background:var(--black-4);border-radius:var(--r-md);padding:1rem">
+              <div style="font-size:1.5rem;margin-bottom:.5rem">🖥️</div>
+              <strong style="font-size:.9rem">Proyectos</strong>
+              <p style="font-size:.82rem;margin-top:.25rem;color:var(--white-60)">Agrega tus trabajos con imagen, descripción y enlace demo.</p>
+            </div>
+            <div style="background:var(--black-4);border-radius:var(--r-md);padding:1rem">
+              <div style="font-size:1.5rem;margin-bottom:.5rem">🛒</div>
+              <strong style="font-size:.9rem">Tienda</strong>
+              <p style="font-size:.82rem;margin-top:.25rem;color:var(--white-60)">Publica productos digitales con precio en USD (PayPal).</p>
+            </div>
+            <div style="background:var(--black-4);border-radius:var(--r-md);padding:1rem">
+              <div style="font-size:1.5rem;margin-bottom:.5rem">🔧</div>
+              <strong style="font-size:.9rem">Servicios</strong>
+              <p style="font-size:.82rem;margin-top:.25rem;color:var(--white-60)">Edita la descripción de cada servicio que ofreces.</p>
+            </div>
+            <div style="background:var(--black-4);border-radius:var(--r-md);padding:1rem">
+              <div style="font-size:1.5rem;margin-bottom:.5rem">💳</div>
+              <strong style="font-size:.9rem">PayPal</strong>
+              <p style="font-size:.82rem;margin-top:.25rem;color:var(--white-60)">Configura tu link PayPal.me en <code style="color:var(--orange)">js/main.js</code> línea ~137.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ────────────── PANEL: PROJECTS ────────────── -->
+      <section id="panel-projects" class="admin-panel" aria-label="Panel de proyectos">
+        <div class="admin-table-wrap">
+          <div class="admin-table-header">
+            <span class="admin-table-title">Proyectos</span>
+            <button id="btn-add-project" class="btn btn-primary btn-sm" aria-label="Agregar proyecto">
+              + Agregar Proyecto
+            </button>
+          </div>
+          <div style="overflow-x:auto">
+            <table aria-label="Lista de proyectos">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Título</th>
+                  <th>Categoría</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="projects-tbody">
+                <tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--white-60)">Cargando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ────────────── PANEL: PRODUCTS ────────────── -->
+      <section id="panel-products" class="admin-panel" aria-label="Panel de productos">
+        <div class="admin-table-wrap">
+          <div class="admin-table-header">
+            <span class="admin-table-title">Tienda / Productos</span>
+            <button id="btn-add-product" class="btn btn-primary btn-sm" aria-label="Agregar producto">
+              + Agregar Producto
+            </button>
+          </div>
+          <div style="overflow-x:auto">
+            <table aria-label="Lista de productos">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="products-tbody">
+                <tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--white-60)">Cargando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ────────────── PANEL: SERVICES ────────────── -->
+      <section id="panel-services" class="admin-panel" aria-label="Panel de servicios">
+        <div class="admin-table-wrap">
+          <div class="admin-table-header">
+            <span class="admin-table-title">Servicios</span>
+            <span style="font-size:.8rem;color:var(--white-60);font-family:var(--font-mono)">Solo edición de descripción</span>
+          </div>
+          <div style="overflow-x:auto">
+            <table aria-label="Lista de servicios">
+              <thead>
+                <tr>
+                  <th>Ícono</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="services-tbody">
+                <tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--white-60)">Cargando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ────────────── PANEL: SETTINGS ────────────── -->
+      <section id="panel-settings" class="admin-panel" aria-label="Panel de configuración">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:2rem">
+
+          <!-- Change password -->
+          <div class="card">
+            <h3 style="font-size:1rem;margin-bottom:1.5rem">🔑 Cambiar Contraseña</h3>
+            <form id="pass-form" novalidate aria-label="Formulario de cambio de contraseña">
+              <div class="form-group">
+                <label class="form-label" for="s-old-pass">Contraseña actual</label>
+                <input type="password" id="s-old-pass" class="form-input" placeholder="••••••••" autocomplete="current-password">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-new-pass">Nueva contraseña</label>
+                <input type="password" id="s-new-pass" class="form-input" placeholder="••••••••" autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-conf-pass">Confirmar contraseña</label>
+                <input type="password" id="s-conf-pass" class="form-input" placeholder="••••••••" autocomplete="new-password">
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%" aria-label="Cambiar contraseña">
+                Actualizar Contraseña
+              </button>
+            </form>
+          </div>
+
+          <!-- Portfolio info -->
+          <div class="card">
+            <h3 style="font-size:1rem;margin-bottom:1.5rem">ℹ️ Información del Sistema</h3>
+            <div style="display:flex;flex-direction:column;gap:.75rem">
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--black-5)">
+                <span style="color:var(--white-60);font-size:.85rem">Versión</span>
+                <span class="badge badge-orange">v1.0.0</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--black-5)">
+                <span style="color:var(--white-60);font-size:.85rem">Almacenamiento</span>
+                <span class="badge badge-white">IndexedDB</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--black-5)">
+                <span style="color:var(--white-60);font-size:.85rem">WhatsApp</span>
+                <span class="badge badge-green">+58 424 649 7143</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--black-5)">
+                <span style="color:var(--white-60);font-size:.85rem">GitHub</span>
+                <span style="font-family:var(--font-mono);font-size:.8rem;color:var(--orange)">@koudd</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.6rem 0">
+                <span style="color:var(--white-60);font-size:.85rem">Pago</span>
+                <span class="badge badge-white">💳 PayPal</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;padding:1rem;background:rgba(255,85,0,.06);border:1px solid rgba(255,85,0,.15);border-radius:var(--r-md)">
+              <p style="font-size:.82rem;color:var(--orange);margin:0">
+                ⚠️ Para configurar tu PayPal.me, edita la variable <code>PAYPAL_ME</code> en <code>js/main.js</code>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reset data (danger) -->
+          <div class="card" style="border-color:rgba(255,60,60,.2)">
+            <h3 style="font-size:1rem;margin-bottom:1rem;color:#FF4444">⚠️ Zona de Peligro</h3>
+            <p style="font-size:.85rem;color:var(--white-60);margin-bottom:1.25rem">
+              Estas acciones son irreversibles. Úsalas con cuidado.
+            </p>
+            <button class="btn btn-sm" style="background:rgba(255,60,60,.1);border:1px solid rgba(255,60,60,.3);color:#FF4444;width:100%"
+              onclick="if(confirm('¿Seguro? Esto borrará TODOS los datos.')) { indexedDB.deleteDatabase('kouddlab_db'); localStorage.clear(); location.reload(); }"
+              aria-label="Resetear todos los datos">
+              🗑️ Resetear todos los datos
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /admin-content -->
+  </main>
+</div><!-- /dashboard-page -->
+
+
+<!-- ════════ ITEM MODAL (Projects / Products / Services) ════════ -->
+<div id="item-modal" class="admin-modal-overlay" role="dialog" aria-modal="true" aria-label="Formulario de item">
+  <div class="admin-modal">
+    <div class="admin-modal-header">
+      <h2 id="modal-title" style="font-size:1.1rem">Agregar</h2>
+      <button class="modal-close" onclick="closeModal('item-modal')" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="admin-modal-body">
+      <div id="modal-form-body"></div>
+    </div>
+    <div class="admin-modal-footer">
+      <button id="modal-cancel-btn" class="btn btn-ghost btn-sm" aria-label="Cancelar">Cancelar</button>
+      <button id="modal-save-btn"   class="btn btn-primary btn-sm" aria-label="Guardar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true">
+          <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>
+        </svg>
+        Guardar
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+
+<script>
+  // Live clock
+  function updateClock() {
+    const t = document.getElementById('current-time');
+    if (t) t.textContent = new Date().toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+</body>
+</html>

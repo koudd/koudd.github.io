@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>koudd.lab — Emmanuel Pirela | Innovación · Código · Tecnología</title>
+  <meta name="description" content="Portfolio profesional de Emmanuel Pirela (koudd.lab). Desarrollo web, sistemas, reparación de computadoras, redes LAN, cámaras y soporte remoto en Venezuela.">
+  <meta name="author" content="Emmanuel Pirela">
+  <meta name="keywords" content="koudd.lab, Emmanuel Pirela, desarrollo web, sistemas, soporte técnico, Venezuela">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="koudd.lab — Emmanuel Pirela">
+  <meta property="og:description" content="Innovación | Código | Tecnología. Portfolio profesional de desarrollo web y soporte técnico.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo-full.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+  <link rel="icon" type="image/png" href="assets/logo-full.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,100..700,0..100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!-- Fallback: DM Sans for offline / restricted envs -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+
+
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader" role="status" aria-label="Cargando koudd.lab">
+  <img src="assets/logo-icon.svg" alt="koudd.lab" class="preloader-logo" onerror="this.style.display='none'">
+  <div style="font-family:'Google Sans Flex','DM Sans',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.02em">
+    koudd<span style="color:#FF5500">.lab</span>
+  </div>
+  <div class="preloader-bar">
+    <div class="preloader-fill"></div>
+  </div>
+</div>
+
+<!-- Global particles canvas (fixed, full-page) -->
+<canvas id="particles-canvas" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0"></canvas>
+
+<!-- Cursor glow -->
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<!-- Toast container -->
+<div id="toast-container" aria-live="polite"></div>
+
+<!-- Floating WhatsApp -->
+<div id="whatsapp-float" role="button" tabindex="0" aria-label="Contactar por WhatsApp">
+  <div class="whatsapp-pulse" aria-hidden="true"></div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.858L.057 23.214a.75.75 0 00.924.924l5.356-1.466A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.979 0-3.842-.532-5.449-1.462l-.389-.228-4.034 1.104 1.133-4.035-.249-.407A10.453 10.453 0 011.5 12C1.5 6.21 6.21 1.5 12 1.5S22.5 6.21 22.5 12 17.79 22.5 12 22.5z"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="koudd.lab inicio">
+      <img src="assets/logo-icon.svg" alt="K}" onerror="this.style.display='none'">
+      <span class="nav-logo-text">koudd<span>.lab</span></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about"    class="nav-link" aria-label="Sobre mí">Sobre mí</a></li>
+      <li><a href="#projects" class="nav-link" aria-label="Proyectos">Proyectos</a></li>
+      <li><a href="#services" class="nav-link" aria-label="Servicios">Servicios</a></li>
+      <li><a href="#store"    class="nav-link" aria-label="Tienda">Tienda</a></li>
+      <li><a href="#contact"  class="nav-link" aria-label="Contacto">Contacto</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="admin.html" class="btn btn-outline btn-sm" aria-label="Panel admin">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+        </svg>
+        Admin
+      </a>
+      <button class="btn btn-primary btn-sm magnetic" data-wa="presupuesto" aria-label="Solicitar presupuesto">
+        Solicitar ↗
+      </button>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="nav-mobile" id="mobile-menu" role="navigation" aria-label="Menú móvil">
+  <a href="#about"    class="nav-link" onclick="closeMobileMenu()">Sobre mí</a>
+  <a href="#projects" class="nav-link" onclick="closeMobileMenu()">Proyectos</a>
+  <a href="#services" class="nav-link" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#store"    class="nav-link" onclick="closeMobileMenu()">Tienda</a>
+  <a href="#contact"  class="nav-link" onclick="closeMobileMenu()">Contacto</a>
+  <button class="btn btn-primary btn-lg" data-wa="presupuesto">Solicitar Servicio ↗</button>
+</nav>
+
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section id="hero" aria-label="Sección principal">
+  <!-- Orb overlays only in hero -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:1" aria-hidden="true"></div>
+
+  <!-- Scan line effect -->
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- Orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span aria-hidden="true"></span>
+      Disponible para proyectos
+    </div>
+
+    <h1 class="hero-title">
+      <span class="shimmer-text">koudd</span><span class="text-orange">.lab</span>
+    </h1>
+
+    <div class="hero-typewriter" aria-live="polite">
+      <span class="mono text-orange">❯</span>
+      <span id="typewriter-text" aria-label="Slogan animado"></span>
+      <span class="cursor-blink" aria-hidden="true"></span>
+    </div>
+
+    <p style="color:var(--white-60);font-size:1.1rem;margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s var(--ease-out) .55s both;max-width:500px;margin-inline:auto">
+      Hola, soy <strong style="color:var(--white)">Emmanuel Pirela</strong> — desarrollador web,
+      ingeniero de sistemas y técnico en IT. Construyo soluciones digitales de alto impacto.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary btn-lg magnetic" aria-label="Ver mis proyectos">
+        Ver mis Proyectos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button class="btn btn-outline btn-lg" data-wa="presupuesto" aria-label="Solicitar servicio">
+        Solicitar Servicio
+      </button>
+    </div>
+
+    <!-- Tech stack badges -->
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:2.5rem;opacity:0;animation:fadeUp .8s var(--ease-out) .85s both">
+      <span class="badge badge-white">HTML/CSS/JS</span>
+      <span class="badge badge-white">Python</span>
+      <span class="badge badge-white">Canvas API</span>
+      <span class="badge badge-white">MySQL</span>
+      <span class="badge badge-white">Redes</span>
+      <span class="badge badge-white">CCTV</span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+<section id="about" class="section" aria-label="Sobre mí">
+  <div class="container">
+    <!-- Stats row -->
+    <div class="grid-4 reveal" style="margin-bottom:5rem">
+      <div class="stat-card">
+        <span class="stat-number" id="stat-projects" data-count="10">0</span>
+        <span class="stat-label">Proyectos</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-clients" data-count="25">0</span>
+        <span class="stat-label">Clientes</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-years" data-count="3" data-suffix="+">0</span>
+        <span class="stat-label">Años de Exp.</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-uptime" data-count="99" data-suffix="%">0</span>
+        <span class="stat-label">Satisfacción</span>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <!-- Left: visual -->
+      <div style="text-align:center">
+        <div class="avatar-ring float-y reveal-scale">
+          <div class="avatar-placeholder" aria-label="Emmanuel Pirela">
+            <span aria-hidden="true">👨‍💻</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem" class="reveal delay-2">
+          <div class="code-block" style="text-align:left">
+            <div><span class="key">const</span> <span style="color:#61AFEF">dev</span> <span style="color:var(--white-60)">=</span> {</div>
+            <div>&nbsp;&nbsp;<span class="key">name</span>: <span class="str">"Emmanuel Pirela"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="key">brand</span>: <span class="str">"koudd.lab"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="key">github</span>: <span class="str">"@koudd"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="key">age</span>: <span class="num">18</span>,</div>
+            <div>&nbsp;&nbsp;<span class="key">location</span>: <span class="str">"Venezuela 🇻🇪"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="key">available</span>: <span style="color:#56B6C2">true</span></div>
+            <div>};</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: info -->
+      <div>
+        <span class="section-label reveal">Sobre mí</span>
+        <h2 class="reveal delay-1">
+          Construyendo el futuro<br>
+          <span class="text-orange">digital</span> desde Venezuela
+        </h2>
+        <div class="divider left reveal delay-2"></div>
+
+        <p class="reveal delay-2" style="margin-bottom:1.5rem">
+          Soy Emmanuel Pirela, fundador de <strong style="color:var(--orange)">koudd.lab</strong> —
+          una marca personal de tecnología enfocada en innovación, código de calidad y soluciones
+          reales. Desarrollador web, programador de sistemas y técnico en IT.
+        </p>
+
+        <p class="reveal delay-3" style="margin-bottom:2rem">
+          Mi pasión es transformar ideas en productos digitales funcionales y atractivos.
+          Desde una pequeña landing page hasta sistemas empresariales, cada proyecto lo trato
+          con el mismo nivel de profesionalismo y dedicación.
+        </p>
+
+        <!-- Skills -->
+        <div class="reveal delay-4">
+          <span class="section-label" style="margin-bottom:.75rem;display:block">Stack tecnológico</span>
+          <div class="skills-cloud">
+            <span class="skill-tag"><span class="dot"></span>HTML5</span>
+            <span class="skill-tag"><span class="dot"></span>CSS3</span>
+            <span class="skill-tag"><span class="dot"></span>JavaScript</span>
+            <span class="skill-tag"><span class="dot"></span>Python</span>
+            <span class="skill-tag"><span class="dot"></span>MySQL</span>
+            <span class="skill-tag"><span class="dot"></span>SQLite</span>
+            <span class="skill-tag"><span class="dot"></span>Three.js</span>
+            <span class="skill-tag"><span class="dot"></span>Git/GitHub</span>
+            <span class="skill-tag"><span class="dot"></span>Redes LAN</span>
+            <span class="skill-tag"><span class="dot"></span>CCTV/IP</span>
+            <span class="skill-tag"><span class="dot"></span>Windows/Linux</span>
+            <span class="skill-tag"><span class="dot"></span>Quick Assist</span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap" class="reveal delay-5">
+          <a href="https://github.com/koudd" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            @koudd
+          </a>
+          <a href="#contact" class="btn btn-primary">
+            Trabajemos juntos ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+<section id="projects" class="section section-gradient" aria-label="Proyectos">
+  <div class="orb orb-1" style="top:50%;right:-150px" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Portfolio</span>
+      <h2 class="section-title reveal delay-1">Mis <span class="text-orange">Proyectos</span></h2>
+      <div class="divider reveal delay-2"></div>
+      <p class="section-desc reveal delay-3">Una selección de proyectos web, sistemas y trabajos especiales que he desarrollado.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-tabs reveal delay-2" role="tablist" aria-label="Filtros de proyectos">
+      <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+      <button class="filter-tab" data-filter="web" role="tab" aria-selected="false">Web</button>
+      <button class="filter-tab" data-filter="sistemas" role="tab" aria-selected="false">Sistemas</button>
+      <button class="filter-tab" data-filter="especial" role="tab" aria-selected="false">Especiales</button>
+      <button class="filter-tab" data-filter="diseno" role="tab" aria-selected="false">Diseño</button>
+    </div>
+
+    <!-- Grid -->
+    <div id="projects-grid" class="grid-3" style="margin-top:1rem" aria-live="polite"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+<section id="services" class="section" aria-label="Servicios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Lo que hago</span>
+      <h2 class="section-title reveal delay-1">Mis <span class="text-orange">Servicios</span></h2>
+      <div class="divider reveal delay-2"></div>
+      <p class="section-desc reveal delay-3">Ofrezco soluciones completas en tecnología para hogares y empresas.</p>
+    </div>
+
+    <div id="services-grid" class="grid-3"></div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:3.5rem" class="reveal">
+      <p style="margin-bottom:1.5rem;font-size:1.1rem">
+        ¿No encuentras lo que buscas? <strong style="color:var(--white)">Contáctame</strong> — tengo solución para todo.
+      </p>
+      <button class="btn btn-primary btn-lg magnetic" data-wa="general" aria-label="Contactar por WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.858L.057 23.214a.75.75 0 00.924.924l5.356-1.466A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.979 0-3.842-.532-5.449-1.462l-.389-.228-4.034 1.104 1.133-4.035-.249-.407A10.453 10.453 0 011.5 12C1.5 6.21 6.21 1.5 12 1.5S22.5 6.21 22.5 12 17.79 22.5 12 22.5z"/></svg>
+        Solicitar Servicio por WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ STORE ═══════════════════════════ -->
+<section id="store" class="section section-gradient" aria-label="Tienda digital">
+  <div class="orb orb-2" style="left:-100px;top:30%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Tienda Digital</span>
+      <h2 class="section-title reveal delay-1">Productos <span class="text-orange">& Soluciones</span></h2>
+      <div class="divider reveal delay-2"></div>
+      <p class="section-desc reveal delay-3">
+        Compra directamente o solicita algo personalizado. Pago seguro vía
+        <span class="badge badge-orange" style="vertical-align:middle">💳 PayPal</span> o
+        <span class="badge badge-green" style="vertical-align:middle">WhatsApp</span>
+      </p>
+    </div>
+
+    <div id="store-grid" class="grid-4"></div>
+
+    <div style="text-align:center;margin-top:3rem" class="reveal">
+      <div class="card" style="display:inline-flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem 3rem;max-width:550px;text-align:center">
+        <span style="font-size:2rem">💡</span>
+        <h3 style="font-size:1.2rem">¿Tienes una idea en mente?</h3>
+        <p style="margin:0;font-size:.9rem">Creo productos digitales a medida — desde cartas de amor web hasta sistemas empresariales completos.</p>
+        <button class="btn btn-primary" data-wa="presupuesto">Cotizar proyecto personalizado</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contact" class="section" aria-label="Contacto">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Hablemos</span>
+      <h2 class="section-title reveal delay-1">¿Tienes un <span class="text-orange">Proyecto</span>?</h2>
+      <div class="divider reveal delay-2"></div>
+      <p class="section-desc reveal delay-3">Respondo en menos de 24 horas. Escríbeme por WhatsApp para atención inmediata.</p>
+    </div>
+
+    <div class="grid-2" style="gap:4rem;align-items:start">
+      <!-- Form -->
+      <div class="reveal-left">
+        <form id="contact-form" class="card" novalidate aria-label="Formulario de contacto">
+          <h3 style="margin-bottom:1.5rem;font-size:1.2rem">Envíame un mensaje</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Tu nombre *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Juan García" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="correo@ejemplo.com" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-service">Servicio de interés</label>
+            <select id="contact-service" class="form-input form-select" aria-label="Selecciona un servicio">
+              <option value="">Seleccionar servicio...</option>
+              <option value="Desarrollo Web">🌐 Desarrollo Web</option>
+              <option value="Desarrollo de Sistemas">💻 Desarrollo de Sistemas</option>
+              <option value="Reparación de Computadora">🔧 Reparación de Computadora</option>
+              <option value="Redes LAN">🔌 Redes LAN</option>
+              <option value="Instalación de Cámaras">📷 Instalación de Cámaras</option>
+              <option value="Soporte Remoto">🛡️ Soporte Remoto</option>
+              <option value="Producto de Tienda">🛒 Producto de la Tienda</option>
+              <option value="Otro">💬 Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Mensaje *</label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Cuéntame sobre tu proyecto o necesidad..." required aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" id="contact-submit" class="btn btn-primary" style="width:100%" aria-label="Enviar mensaje por WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.858L.057 23.214a.75.75 0 00.924.924l5.356-1.466A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.979 0-3.842-.532-5.449-1.462l-.389-.228-4.034 1.104 1.133-4.035-.249-.407A10.453 10.453 0 011.5 12C1.5 6.21 6.21 1.5 12 1.5S22.5 6.21 22.5 12 17.79 22.5 12 22.5z"/></svg>
+            Enviar por WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact info -->
+      <div class="reveal-right">
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div class="card" style="display:flex;align-items:center;gap:1rem">
+            <div class="service-icon" style="flex-shrink:0;margin:0">📱</div>
+            <div>
+              <div style="font-weight:600;margin-bottom:.2rem">WhatsApp</div>
+              <div style="font-family:var(--font-mono);font-size:.85rem;color:var(--orange)">+58 424 649 7143</div>
+              <div style="font-size:.8rem;color:var(--white-60)">Respuesta rápida garantizada</div>
+            </div>
+          </div>
+
+          <div class="card" style="display:flex;align-items:center;gap:1rem">
+            <div class="service-icon" style="flex-shrink:0;margin:0">🐙</div>
+            <div>
+              <div style="font-weight:600;margin-bottom:.2rem">GitHub</div>
+              <a href="https://github.com/koudd" target="_blank" rel="noopener"
+                 style="font-family:var(--font-mono);font-size:.85rem;color:var(--orange);transition:color .2s"
+                 aria-label="GitHub de koudd">
+                github.com/koudd
+              </a>
+              <div style="font-size:.8rem;color:var(--white-60)">Código abierto y proyectos</div>
+            </div>
+          </div>
+
+          <div class="card" style="display:flex;align-items:center;gap:1rem">
+            <div class="service-icon" style="flex-shrink:0;margin:0">💳</div>
+            <div>
+              <div style="font-weight:600;margin-bottom:.2rem">Pagos</div>
+              <div style="font-family:var(--font-mono);font-size:.85rem;color:var(--orange)">PayPal</div>
+              <div style="font-size:.8rem;color:var(--white-60)">Pagos seguros en USD</div>
+            </div>
+          </div>
+
+          <div class="card" style="display:flex;align-items:center;gap:1rem">
+            <div class="service-icon" style="flex-shrink:0;margin:0">🛡️</div>
+            <div>
+              <div style="font-weight:600;margin-bottom:.2rem">Soporte Remoto</div>
+              <div style="font-family:var(--font-mono);font-size:.85rem;color:var(--orange)">Quick Assist</div>
+              <div style="font-size:.8rem;color:var(--white-60)">Asistencia inmediata disponible</div>
+            </div>
+          </div>
+
+          <!-- Quick service buttons -->
+          <div style="display:flex;flex-direction:column;gap:.5rem">
+            <span class="section-label" style="margin-bottom:.25rem">Acceso rápido</span>
+            <button class="btn btn-outline btn-sm" data-wa="web">🌐 Solicitar Web</button>
+            <button class="btn btn-outline btn-sm" data-wa="soporte">🛡️ Soporte Remoto Ya</button>
+            <button class="btn btn-outline btn-sm" data-wa="reparacion">🔧 Reparación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+          <img src="assets/logo-icon.svg" alt="koudd.lab" style="height:36px" onerror="this.style.display='none'">
+          <span style="font-family:'Google Sans Flex','DM Sans',sans-serif;font-weight:700;font-size:1.25rem">
+            koudd<span style="color:var(--orange)">.lab</span>
+          </span>
+        </div>
+        <p>Innovación | Código | Tecnología.<br>Soluciones digitales desde Venezuela al mundo.</p>
+        <div style="margin-top:1rem;font-family:var(--font-mono);font-size:.75rem;color:var(--white-60)">
+          Emmanuel Pirela · <span style="color:var(--orange)">@Emmanuel.lab</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Navegación</div>
+        <div class="footer-links">
+          <a href="#about"    class="footer-link">Sobre mí</a>
+          <a href="#projects" class="footer-link">Proyectos</a>
+          <a href="#services" class="footer-link">Servicios</a>
+          <a href="#store"    class="footer-link">Tienda</a>
+          <a href="#contact"  class="footer-link">Contacto</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Servicios</div>
+        <div class="footer-links">
+          <span class="footer-link" data-wa="web"        style="cursor:pointer">Desarrollo Web</span>
+          <span class="footer-link" data-wa="sistemas"   style="cursor:pointer">Sistemas</span>
+          <span class="footer-link" data-wa="reparacion" style="cursor:pointer">Reparación PC</span>
+          <span class="footer-link" data-wa="redes"      style="cursor:pointer">Redes LAN</span>
+          <span class="footer-link" data-wa="camaras"    style="cursor:pointer">Cámaras CCTV</span>
+          <span class="footer-link" data-wa="soporte"    style="cursor:pointer">Soporte Remoto</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        © 2024 <span style="color:var(--orange)">koudd.lab</span> · Emmanuel Pirela · Todos los derechos reservados
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/koudd" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://wa.me/584246497143" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.858L.057 23.214a.75.75 0 00.924.924l5.356-1.466A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.979 0-3.842-.532-5.449-1.462l-.389-.228-4.034 1.104 1.133-4.035-.249-.407A10.453 10.453 0 011.5 12C1.5 6.21 6.21 1.5 12 1.5S22.5 6.21 22.5 12 17.79 22.5 12 22.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═════════════════════ PROJECT MODAL ═════════════════════ -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Detalle del proyecto">
+  <div class="modal">
+    <button class="modal-close" aria-label="Cerrar">✕</button>
+    <div id="project-modal-body"></div>
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
