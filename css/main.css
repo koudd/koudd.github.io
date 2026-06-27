@@ -78,6 +78,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  min-width: 0;
 }
 
 html {
@@ -85,14 +86,40 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  max-width: 100%;
 }
 
 body {
   font-family: var(--font-main);
   background: var(--black);
   color: var(--white);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   line-height: 1.6;
+  max-width: 100%;
+  min-height: 100vh;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+.container,
+.nav-inner,
+.hero-content,
+.card,
+.service-card,
+.product-card,
+.project-card,
+.modal,
+.form-row {
+  min-width: 0;
+}
+
+*, *::before, *::after {
+  min-width: 0;
 }
 
 img, video { max-width: 100%; display: block; }
